@@ -1,0 +1,11 @@
+{
+    "scripts": {
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "verify": "docker ps",
+    "copy-data": "docker cp ./restaurants.json curriculum-backend-mongodb-queries-practice-mongodb-1:/home/mongodb",
+    "import-data": "docker exec -i curriculum-backend-mongodb-queries-practice-mongodb-1 mongoimport --db practice --collection restaurants --drop --file /home/mongodb --authenticationDatabase admin --username root --password example",
+    "shell": "docker exec -it curriculum-backend-mongodb-queries-practice-mongodb-1 mongosh -u root -p example",
+    "reset": "docker-compose down -v"
+  }
+}
